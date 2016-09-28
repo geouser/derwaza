@@ -118,4 +118,50 @@ jQuery(document).ready(function($) {
         
     });
 
+
+
+    /*----------------------------
+                              Google map
+    -------------------------*/
+    /*---------------------------
+                                GOOGLE MAP
+    ---------------------------*/
+    var map;
+    function googleMap_initialize() {
+        var lat = 40.34503137704171;
+        var long = 49.838739931583405;
+
+        var mapCenterCoord = new google.maps.LatLng(lat, long);
+        var mapMarkerCoord = new google.maps.LatLng(lat, long);
+
+
+        var mapOptions = {
+            center: mapCenterCoord,
+            zoom: 17,
+            //draggable: false,
+            disableDefaultUI: true,
+            scrollwheel: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+        var markerImage = new google.maps.MarkerImage('images/location.png');
+        var marker = new google.maps.Marker({
+            icon: markerImage,
+            position: mapMarkerCoord, 
+            map: map,
+            title:"Park Bayil"
+        });
+        
+        $(window).resize(function (){
+            map.setCenter(mapCenterCoord);
+        });
+    }
+
+    if ( $('#map_canvas').length > 0) {
+        googleMap_initialize();   
+    }
+
+
+
 }); // end file
