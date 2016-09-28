@@ -1,30 +1,18 @@
          
 .mainHeader {
     @include position(absolute, 0, auto, auto, 0);
-    width: 100%;
+    width: 100%; height: 70px;
     z-index: 100;
     background: #fff;
     margin: 0;
     @include transition(all, .4s);
-    
-        /*.................media.............*/
-        @include m800 {
-            @include position(fixed, 0, auto, auto, -100%);
-            width: 260px !important;
-            height: 100%;
-            text-align: center;
-            background-color: #fff;
-            margin-top: 0;
-            padding: 20px 0;
-            z-index: 100;
-            overflow: scroll;
-             
-            &.active { left: 0;}
-            .wrapper {
-                display: block;
-            }
-        }
-        /*.............end media..............*/
+    .wrapper {
+        height: 100%;
+        @include flex();
+    }
+    /*.................media.............*/
+
+    /*.............end media..............*/
 }
 
 
@@ -32,26 +20,13 @@
 /*  NAV STYLES  */
 .mainNav {
     ul {
-        list-style-type: none;
-        a {
+        li {
             display: inline-block;
-            margin: 0 20px;
-            text-decoration: none;
-            @include transition(all, .2s);             
-            &:hover {}
-        }
-
-            /*.................media.............*/
-            @include m800 { 
-                display: block;
-                position: relative;
-                li a  {   
-                    margin: 0 0 25px 0;
-                    &.active {color: #ECCC1D;}
-                    &:hover  {background: transparent;}
-                } 
+            vertical-align: middle;
+            a {
+                display: inline-block;
             }
-            /*.............end media.............*/
+        }
     }
 }
 
@@ -61,42 +36,107 @@
 /* ------------------------------------ */
 /*  MENU BUTTON  */
 
-.menu-button     {    
-    display: none;
-    width: 50px;
-    height: 50px;
-    @include position(fixed, 15px, 15px, auto, auto);
-    margin: auto; 
-    cursor: pointer;
-    z-index: 100;
-    background-color: salmon;
-    border: none;
-    -webkit-border-radius: 4px;
-            border-radius: 4px;
-    .menu-line {
-        display: block;
-        @include position(absolute, auto, 0, auto, 0);
-        width: 60%;
-        height: 5px;
-        background-color: #fff;
-        -webkit-border-radius: 1px;
-        border-radius: 1px;
-        @include transition(all, .4s);
+/* ------------------------------------ */
+/*  MENU BUTTON  */
+#menu-toggle {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+  * {
+      transition: .1s ease-in-out;
+  }
+  width:35px;
+  height:24px;
+  cursor:pointer;
+  text-align: right;
+  span {
+      display: block;
+  }
+  &:hover {
+    background:rgba(255,255,255,.8);
+  }
+  #hamburger {
+    position:absolute;
+    height:100%;
+    width:100%;
+    z-index: 2;
+    span {
+      width:100%;
+      height:2px;
+      position:relative;
+      top:0;
+      left:0px;
+      background:  #444;
+      &:nth-child(1){
+        transition-delay:.5s;
+        margin-top: 0;
+      }
+      &:nth-child(2){
+        transition-delay:.625s;
+        margin: 8px 0;
+      }
+      &:nth-child(3){
+        transition-delay:.75s;
+        margin-bottom: 0;
+        float: right;
+        width: 80%;
+      }
     }
+    }
+  #cross {
+    position:absolute;
+    height:100%;
+    width:100%;
+    transform:rotate(45deg);
+    span{
+      background: #444;
+      &:nth-child(1){
+        height:0%;
+        width:2px;
+        position:absolute;
+        top: -6px;
+        left: 17px;
+        transition-delay:0s;
+      }
+      &:nth-child(2){
+        width:0%;
+        height:2px;
+        position:absolute;
+        left: 1px;
+        top: 10px;
+        transition-delay:.25s;
+      }
+    }
+  }
+}
 
-    .top_line              {   top: 12px;  margin: auto;}
-    .middle_line           {   top: 22px;  margin: auto;}
-    .bottom_line           {   bottom: 12px; margin: auto;}
-
-    &.active               {   -webkit-border-radius: 6px; border-radius: 6px;}
-    &.active .top_line     {   @include transform(rotate(45deg)); top: 45%;}
-    &.active .bottom_line  {   @include transform(rotate(-45deg)); bottom: 45%;}
-    &.active .middle_line  {   width: 0; left: 50%;}
-
-        /*.................media.............*/
-        @include m800 {
-            display: block;
-        }
-        /*..............end media.............*/
-
+#menu-toggle.active {
+  #hamburger {
+    span {
+      width:0%;
+      &:nth-child(1){
+        transition-delay:0s;
+      }
+      &:nth-child(2){
+        transition-delay:.125s;
+      }
+      &:nth-child(3){
+        transition-delay:.25s;
+      }
+    }
+  }
+  #cross {
+    span {
+      &:nth-child(1){
+        height:35px;
+        transition-delay:.625s;
+      }
+    }
+    span {
+      &:nth-child(2){
+        width:35px;
+        transition-delay:.375s;
+      }
+    }    
+  }
 }

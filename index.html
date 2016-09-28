@@ -18,6 +18,7 @@
         
         <link rel="stylesheet" href="css/general.css">
     </head>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
     <body>
 
 
@@ -26,45 +27,60 @@
                                                     <!-- HEADER -->
         <header class="mainHeader">
             <div class="wrapper">
+                
+                <a href="index.html" class="logo"><img src="images/logo.jpg" alt=""></a>
 
                 <nav class="mainNav"><!-- start navigation -->
                     <ul>
-                        <li><a href="#" class="active">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Practive</a></li>
-                        <li><a href="#">Lawyers</a></li>
-                        <li><a href="#">Media</a></li>
-                        <li><a href="#">Contacts</a></li>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="media.html">Media</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contacts.html">Contacts us</a></li>
                     </ul>
                 </nav><!-- end nav -->
 
-                <div class="mainHeader__info">
-                    <div class="social">
-                        <a href="" class="social__item"></a>
-                        <a href="" class="social__item"></a>
-                        <a href="" class="social__item"></a>
-                    </div>
-                    <a href="tel:+971 55 915 94 49" class="tel">+971 55 915 94 49</a>
-                    <a href="mailto:hello@law.com" class="mail">hello@law.com</a>
-                </div><!-- end mainHeader__info -->
+                <a href="tel:02 3048075" class="tel">02 3048075</a>
 
             </div><!-- end wrapper -->
         </header><!-- end header -->
         
-        <button class="menu-button"> 
-            <span class="menu-line top_line"></span>
-            <span class="menu-line middle_line"></span>
-            <span class="menu-line bottom_line"></span>
-        </button><!-- end toggle mobile menu -->
+        <div id="menu-toggle" class="menu-button">
+            <div id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="cross">
+                <span></span>
+                <span></span>
+                </div>
+            </div>
+        </div> 
 
 
         <!--=================================================================================================-->
                                                     <!-- OFFER SECTION -->
         <section class="offer">
             <div class="offer__info wrapper"><!-- start offerInfo -->
-                <h1>Free advice from our</h1>
-                <button class="button">Request a free consultation</button>
-            </div><!-- end offerInfo -->
+                <h1>AL DERWAZA RESTAURANT</h1>
+                <p class="subtitle">Emirati Traditional Food - Since 1960</p>
+            </div><!-- end offerInfo -->            
+            <footer class="offer__footer">
+                <div class="wrapper">
+                    <select name="" id="" class="languages">
+                        <option value="en">en</option>
+                        <option value="ar">ar</option>
+                    </select>
+                    <button class="down"></button>
+                    <div class="social">
+                        <a href="" class="social__items"></a>
+                        <a href="" class="social__items"></a>
+                        <a href="" class="social__items"></a>
+                    </div>
+                </div>
+            </footer>
         </section><!-- end offer section --> 
 
 

@@ -1,3 +1,25 @@
 .offer {
-    height: 800px;
+    @include flex($direction: column, $justify: center);
+    height: 100%;
+    max-height: 825px;
+    min-height: 600px;
+    position: relative;
+    background-image: url("../images/offer_main.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+    h1, p {
+        color: #FFF;
+    }
+    footer {
+        position: absolute;
+        bottom: 45px;
+        left: 0;
+        right: 0;
+        .wrapper {
+            @include flex();
+        }
+    }
 }
