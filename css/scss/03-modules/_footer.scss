@@ -1,0 +1,16 @@
+footer {
+	padding: 30px 0;
+	font-size: 18px;
+
+	p {
+		span,
+		a {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		a img {
+			display: block;
+			width: 160px;
+		}
+	}
+}
