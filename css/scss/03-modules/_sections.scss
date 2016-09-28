@@ -1,0 +1,24 @@
+.section {
+    &--through {
+        padding: 75px 0;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+             -o-background-size: cover;
+                background-size: cover;
+        h2 {
+            color: #FFF;
+            &:after {
+                display: none;
+            }
+        }
+        .button {
+            margin-top: 40px
+        }
+    }
+    &--recipes {
+        background-image: url("../images/through_1.jpg");
+    }
+    &--blend {
+        background-image: url("../images/through_2.jpg");
+    }
+}

@@ -1,0 +1,24 @@
+.infoMedia {
+    @include flex($alignI: flex-start);
+    &__col {
+        width: 50%;
+        &--info {
+            padding: 20px;
+            text-align: left;
+            @include flex($direction: column, $justify: center);
+            p {
+                margin-top: 15px;
+            }
+            .button {
+                display: block;
+                margin: 35px auto 0;
+            }
+        }
+        &--media {
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}

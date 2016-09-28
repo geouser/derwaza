@@ -61,6 +61,14 @@ jQuery(document).ready(function($) {
 
 
 
+    $('.offer__slider').slick({
+        fade: true,
+        arrows: false,
+        dots: true
+    });
+
+
+
     /*----------------------------
                               SEND FORM
     -------------------------*/
