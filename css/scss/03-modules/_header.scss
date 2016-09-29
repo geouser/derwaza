@@ -30,6 +30,10 @@
         margin-right: 7px;
         background-position: -39px 17px;
     }
+    &:hover:before {
+      -webkit-animation: Rotate 2500ms linear infinite;
+      animation: Rotate 2500ms linear infinite;
+    }
 }
 
 /* ------------------------------------ */
@@ -44,6 +48,10 @@
                 font: 16px $pnr;
                 color: $text;
                 text-transform: uppercase;
+                @include transition(all, .2s);
+                &:hover {
+                  color: $gold;
+                }
             }
             &:after {
                 content: "";
@@ -170,4 +178,26 @@
       }
     }    
   }
+}
+
+@-webkit-keyframes Rotate {
+  0% {-webkit-transform:rotate(0deg);}
+  4% {-webkit-transform:rotate(-25deg);}
+  8% {-webkit-transform:rotate(0deg);}
+  12% {-webkit-transform:rotate(-25deg);}
+  16% {-webkit-transform:rotate(0deg);}
+  20% {-webkit-transform:rotate(-25deg);}
+  24% {-webkit-transform:rotate(0deg);}
+  100% {-webkit-transform:rotate(0deg);}
+}
+
+@keyframes Rotate {
+  0% {transform:rotate(0deg);}
+  4% {transform:rotate(25deg);}
+  8% {transform:rotate(0deg);}
+  12% {transform:rotate(25deg);}
+  16% {transform:rotate(0deg);}
+  20% {transform:rotate(25deg);}
+  24% {transform:rotate(0deg);}
+  100% {transform:rotate(0deg);}
 }
