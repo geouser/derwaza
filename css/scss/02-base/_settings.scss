@@ -1,6 +1,35 @@
 
 // TYPOGRAPHIC
 // ---------------------------
+h1 {
+    font: 60px $pnb;
+    text-transform: uppercase;
+}
+h2 {
+    font: 48px $pnb;
+    text-transform: uppercase;
+    text-align: center;
+    span {
+        display: block;
+        color: $gold;
+        font: 60px $lr;
+        text-transform: none;
+    }
+    &:after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 220px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-image: url("../images/title_orn_2.png");
+    }
+}
+.subtitle {
+    font: 48px $lti;
+}
+
 html,
 body {
 	height: 100%;
@@ -8,15 +37,26 @@ body {
 body {
     padding-top: 70px;
     font-family: $pnr;
+    font-size: 14px;
+    color: $text;
 }
 
 // lAYOUT
 // ---------------------------
 .wrapper {
-	width: 1200px;
+	width: 960px;
 	margin: 0 auto;
 	text-align: center;
 }
+
 .flex {
 	@include flex();
 }
+
+section {
+    padding: 90px 0;
+    &--through {
+        padding: 80px 0;
+    }
+}
+

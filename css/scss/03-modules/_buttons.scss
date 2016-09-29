@@ -6,6 +6,11 @@
     color: $text;
     text-transform: uppercase;
     border: none;
+    font: 21px $pns;
+    &--dark {
+        background: $text;
+        color: #FFF;
+    }
 }
 a.button {
     line-height: 50px;
