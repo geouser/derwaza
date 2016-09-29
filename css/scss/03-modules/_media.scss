@@ -3,48 +3,6 @@
 	overflow: hidden;
 	z-index: 1;
 
-	&:before {
-		content: '';
-		width: 660px;
-		height: 660px;
-		position: absolute;
-		top: 0;
-		left: 0;
-		-webkit-transform: translate(-50%, -50%);
-		-ms-transform: translate(-50%, -50%);
-		-o-transform: translate(-50%, -50%);
-		transform: translate(-50%, -50%);
-		background-size: 100%;
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-		z-index: -1;
-
-		@media (min-width: 1300px) {
-			background-image: url(../images/media.jpg);
-		}
-	}
-
-	&:after {
-		content: '';
-		width: 660px;
-		height: 660px;
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		-webkit-transform: translate(50%, 50%);
-		-ms-transform: translate(50%, 50%);
-		-o-transform: translate(50%, 50%);
-		transform: translate(50%, 50%);
-		background-size: 100%;
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-		z-index: -1;
-
-		@media (min-width: 1300px) {
-			background-image: url(../images/media.jpg);
-		}
-	}
-
 	h2:after {
 		display: none;
 	}
@@ -63,6 +21,7 @@
 
 	&.slick-initialized .slick-slide {
 		@include flex();
+		margin-bottom: 0;
 	}
 
 	.slick-arrow {
@@ -98,14 +57,25 @@
 		background-image: url(../images/arrow-next.svg);
 	}
 
+	.event {
+		margin-bottom: 0;
+	}
+}
+
+.event {
+
+	&:not(:last-child) {
+		margin-bottom: 50px;
+	}
+
 	.content-column {
-		width: -webkit-calc(100% - 520px);
-		width: calc(100% - 520px);
+		width: 330px;
 		padding-right: 25px;
 	}
 
 	.image-column {
-		width: 520px;
+		width: -webkit-calc(100% - 330px);
+		width: calc(100% - 330px);
 		height: auto;
 
 		img {
@@ -114,43 +84,110 @@
 		}
 	}
 
-	.slide {
-		time {
-			text-transform: uppercase;
-			font-family: $pnl;
-			font-size: 16px;
-			color: #515151;
-			margin-bottom: 8px;
-			display: block;
-		}
+	time {
+		text-transform: uppercase;
+		font-family: $pnl;
+		font-size: 16px;
+		color: #515151;
+		margin-bottom: 8px;
+		display: block;
+	}
 
-		.slide-title {
-			font-size: 30px;
-			font-family: $pns;
-			color: $text;
-			text-transform: uppercase;
-			position: relative;
-			line-height: 30px;
-			margin-bottom: 13px;
+	.slide-title {
+		font-size: 30px;
+		font-family: $pns;
+		color: $text;
+		text-transform: uppercase;
+		position: relative;
+		line-height: 30px;
+		margin-bottom: 13px;
 
-			 &:after {
-		        content: "";
-		        display: block;
-		        margin: 0 auto;
-		        width: 220px;
-		        height: 30px;
-		        background-repeat: no-repeat;
-		        background-position: 50% 50%;
-		        background-image: url("../images/title_orn_2.png");
-		    }
-		}
+		 &:after {
+	        content: "";
+	        display: block;
+	        margin: 0 auto;
+	        width: 220px;
+	        height: 30px;
+	        background-repeat: no-repeat;
+	        background-position: 50% 50%;
+	        background-image: url("../images/title_orn_2.png");
+	    }
+	}
 
-		p {
-			font-size: 14px;
-		}
+	p {
+		font-size: 14px;
+	}
 
-		.button {
-			margin-top: 45px;
+	.button {
+		margin-top: 45px;
+	}
+}
+
+.media-box {
+	.event:nth-child(even) {
+		-webkit-flex-direction: row-reverse;
+	    -ms-flex-direction: row-reverse;
+	    flex-direction: row-reverse;
+
+	    .content-column {
+	    	padding-right: 0;
+	    	padding-left: 25px;
+	    }
+	}
+}
+
+
+.wp-pagenavi {
+	display: block;
+	margin: 50px auto 0 auto;
+	width: auto;
+
+	a,
+	span {
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 21px;
+		color: $text;
+		font-family: $pns;
+		margin: 0 10px;
+		-webkit-transition: color 0.3s ease;
+		-o-transition: color 0.3s ease;
+		transition: color 0.3s ease;
+	}
+
+	a.page:hover,
+	span.current {
+		color: $gold;
+	}
+
+	a.first,
+	a.last {
+		width: 10px;
+		height: 25px;
+		position: relative;
+
+		&:before {
+			content: '';
+			width: 0;
+			height: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			-o-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
 		}
+	}
+
+	a.first:before {
+		border-style: solid;
+		border-width: 5px 5px 5px 0;
+		border-color: transparent $text transparent transparent;
+	}
+	a.last:before {
+		border-style: solid;
+		border-width: 5px 0 5px 5px;
+		border-color: transparent transparent transparent $text;
 	}
 }
