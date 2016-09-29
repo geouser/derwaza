@@ -1,0 +1,83 @@
+.tabs {
+    margin: 65px auto;
+    text-align: left;
+    h3 {
+        text-transform: uppercase;
+        color: $text;
+        font: 30px $pns;
+        margin-bottom: 16px;
+        cursor: pointer;
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 15px;
+            background-image: url("../images/arrow-next.svg");
+            width: 20px;
+            height: 28px;
+            margin-left: -9px;
+            background-repeat: no-repeat;
+             -webkit-transform: rotate(90deg);
+                   -moz-transform: rotate(45deg);
+                    -ms-transform: rotate(90deg);
+                     -o-transform: rotate(90deg);
+                        transform: rotate(90deg);
+        }
+        &.ui-state-active {
+            margin-top: 0;
+            color: $gold;
+            &:before {
+                background-image: url("../images/arrow-next-yellow.svg");
+            }
+        }
+    }
+    div {
+        padding: 20px 20px 0 30px;
+        text-align: left;
+        border-bottom: 50px solid #fff;
+        position: relative;
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            border-left:  2px solid $gold;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        h4 {
+            font: 21px $pns;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            margin-top: 40px;
+        }
+        ul {
+            list-style-type: none;
+            margin-bottom: 25px;
+            li {
+                font-size: 18px;
+                padding-left: 6px;
+                &:before {
+                    content: ".";
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-bottom: 10px;
+                    font-weight: 700;
+                    margin-right: 5px;
+                    line-height: 10px;
+                    font-size: 26px;
+                }
+            }
+        }
+        .button {
+            margin-top: 25px;
+        }
+    }
+}
