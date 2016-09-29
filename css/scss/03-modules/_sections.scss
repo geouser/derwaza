@@ -21,4 +21,67 @@
     &--blend {
         background-image: url("../images/through_2.jpg");
     }
+
+    &.decorated {
+        position: relative;
+
+        &:before,
+        &:after {
+            content: '';
+            width: 660px;
+            height: 660px;
+            position: absolute;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            z-index: -1;
+            @media (min-width: 1300px) {
+                background-image: url(../images/media.jpg);
+            }
+        }
+
+        &.top-left {
+            &:before {
+                top: 0;
+                left: 0;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            &:after {
+                bottom: 0;
+                right: 0;
+                -webkit-transform: translate(50%, 50%);
+                -ms-transform: translate(50%, 50%);
+                -o-transform: translate(50%, 50%);
+                transform: translate(50%, 50%);
+            }    
+        }
+        
+        &.bottom-left {
+            &:before {
+                bottom: 0;
+                left: 0;
+                -webkit-transform: translate(-50%, 50%);
+                -ms-transform: translate(-50%, 50%);
+                -o-transform: translate(-50%, 50%);
+                transform: translate(-50%, 50%);
+            }
+
+            &:after {
+                top: 0;
+                right: 0;
+                -webkit-transform: translate(50%, -50%);
+                -ms-transform: translate(50%, -50%);
+                -o-transform: translate(50%, -50%);
+                transform: translate(50%, -50%);
+            }
+        }
+
+    }
+
+
+    
 }
