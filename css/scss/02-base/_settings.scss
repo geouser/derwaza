@@ -54,6 +54,11 @@ h2 {
         background-position: 50% 50%;
         background-image: url("../images/title_orn_2.png");
     }
+    &.noOrnament {
+        &:after {
+            display: none;
+        }
+    }
 }
 .subtitle {
     font: 48px $lti;
