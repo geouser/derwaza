@@ -1,0 +1,14 @@
+.popup {
+	display: block;
+	margin: 0 auto;
+
+	&.order-table {
+		width: 780px;
+		padding: 10px;
+		background-color: #fff;
+	}
+
+	.popup-wrapper {
+		border: 1px solid $text;
+	}
+}
