@@ -4,6 +4,35 @@
 h1 {
     font: 60px $pnb;
     text-transform: uppercase;
+    position: relative;
+    span {
+        display: block;
+        color: $gold;
+        font: 60px $lr;
+        text-transform: none;
+        bottom: -20px;
+        position: relative;
+    }
+    &.ornamentTop:after {
+        bottom: auto; top: 56px;
+    }
+    &:after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 114%;
+        height: 76px;
+        position: absolute;
+        bottom: -32px;
+        left: -7%;
+        top: auto;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-image: url("../images/title_orn_1.png");
+        -webkit-background-size: 100% 100%;
+             -o-background-size: 100% 100%;
+                background-size: 100% 100%;
+    }
 }
 h2 {
     font: 48px $pnb;
@@ -28,6 +57,14 @@ h2 {
 }
 .subtitle {
     font: 48px $lti;
+}
+.adviseText {
+    text-transform: uppercase;
+    margin: 30px;
+    a {
+        color: $gold;
+        text-decoration: underline;
+    }
 }
 
 html,

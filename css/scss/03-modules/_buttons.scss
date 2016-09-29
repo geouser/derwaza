@@ -11,6 +11,10 @@
         background: $text;
         color: #FFF;
     }
+    &--yellow {
+        background: $gold;
+        color: #FFF;
+    }
 }
 a.button {
     line-height: normal;

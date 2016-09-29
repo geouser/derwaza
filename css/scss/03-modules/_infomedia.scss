@@ -21,4 +21,26 @@
             }
         }
     }
+    &--center {
+        .infoMedia__col--info {
+            text-align: center;
+            h2:after {
+                margin-top: 10px;
+            }
+            p {
+                max-width: 320px;
+            }
+        }
+    }
+}
+
+.menu {
+    .infoMedia {
+        margin-bottom: 50px;
+        &:nth-of-type(2n) {
+            -webkit-flex-direction: row-reverse;
+                -ms-flex-direction: row-reverse;
+                    flex-direction: row-reverse;
+        }
+    }
 }
