@@ -50,5 +50,13 @@
     margin: 40px auto;
     &__actions {
         @include flex($justify: space-around);
+        @include m750 {
+            display: block;
+            text-align: center;
+            .button {
+                display: block;
+                margin: 10px auto;
+            }
+        }
     }
 }

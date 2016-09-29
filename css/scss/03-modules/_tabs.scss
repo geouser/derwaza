@@ -1,12 +1,21 @@
 .tabs {
     margin: 65px auto;
     text-align: left;
+    @include m1000 {
+      padding: 0 10px 0 10px;
+    }
     h3 {
         text-transform: uppercase;
         color: $text;
         font: 30px $pns;
         margin-bottom: 16px;
         cursor: pointer;
+        @include m750 {
+            font-size: 26px;
+        }
+        @include m500 {
+            font-size: 22px;
+        }
         &:before {
             content: "";
             display: inline-block;
@@ -36,6 +45,9 @@
         text-align: left;
         border-bottom: 50px solid #fff;
         position: relative;
+        @include m750 {
+            padding: 10px 0px 0 20px;
+        }
         &:before {
             content: "";
             display: block;
@@ -51,19 +63,33 @@
             &:last-child {
                 margin-bottom: 0;
             }
+            @include m500 {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
         }
         h4 {
             font: 21px $pns;
             text-transform: uppercase;
             margin-bottom: 25px;
             margin-top: 40px;
+            @include m500 {
+                margin-bottom: 20px;
+            }
         }
         ul {
             list-style-type: none;
             margin-bottom: 25px;
+            @include m500 {
+                margin-bottom: 15px;
+            }
             li {
                 font-size: 18px;
                 padding-left: 6px;
+                @include m500 {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
                 &:before {
                     content: ".";
                     display: inline-block;

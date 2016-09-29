@@ -12,6 +12,14 @@ jQuery(document).ready(function($) {
     if( $( "#accordion").length > 0 ) {
          $( "#accordion" ).accordion({ heightStyle: "content"  });
     }
+
+    $('.down').click(function() {
+        $('html, body').animate({
+            scrollTop: $('#anchor').offset().top 
+        }, 800);
+        return false;
+    });
+
     /*---------------------------
                                   ADD CLASS ON SCROLL
     ---------------------------*/
@@ -36,9 +44,9 @@ jQuery(document).ready(function($) {
         $(this).toggleClass('active');
         $(this).siblings('header').toggleClass('active');
         if ($('header').hasClass('active')) {
-                $('body, html').css('overflow', 'hidden');
+                $('body').css('overflow', 'hidden');
             } else {
-                $('body, html').css('overflow', 'visible');
+                $('body').css('overflow', 'visible');
             }
     });
 
@@ -69,7 +77,10 @@ jQuery(document).ready(function($) {
     $('.offer__slider').slick({
         fade: true,
         arrows: false,
-        dots: true
+        dots: true,
+        speed: 700,
+        autoplay: true,
+        pauseOnFocus: false
     });
 
     /*----------------------------
