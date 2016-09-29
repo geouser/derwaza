@@ -50,7 +50,8 @@
         &.slick-active {
             background-color: $gold;
         }
-        * {
+        &:before,
+        button {
             display: none;
         }
     }
