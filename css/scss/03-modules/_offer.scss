@@ -11,6 +11,10 @@
     -webkit-background-size: cover;
          -o-background-size: cover;
             background-size: cover;
+    @include m1000 {
+        padding-bottom: 60px;
+        min-height: 500px;
+    }
     h1, p {
         color: #FFF;
     }
@@ -19,8 +23,12 @@
         bottom: 45px;
         left: 0;
         right: 0;
+        padding: 0;
         .wrapper {
             @include flex();
+        }
+        @include m600 {
+            bottom: 20px
         }
     }
     &__slider {
@@ -41,6 +49,12 @@
     bottom: 35%;
     text-align: center;
     width: 100%;
+    @media (max-height: 600px) and (max-width: 1000px) {
+        bottom: 30%
+    }
+    @media (max-height: 500px) and (max-width: 1000px) {
+        bottom: 25%
+    }
     li {
         width: 20px;
         height: 2px;

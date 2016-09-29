@@ -34,12 +34,21 @@
 
 	.map-info {
 		text-align: left;
+		@include m800 {
+			text-align: center;
+		}
 
 		.content {
 			display: inline-block;
 			width: 330px;
 			position: relative;
 			z-index: 3;
+			@include m800 {
+	            text-align: center;
+	        }
+	        @include m500 {
+	            width: 290px;
+	        }
 		}
 
 		h2 {

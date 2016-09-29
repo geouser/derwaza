@@ -190,12 +190,23 @@
   }
 }
 
+@mixin m500 {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
 @mixin m600 {
   @media (max-width: 600px) {
     @content;
   }
 }
 
+@mixin m750 {
+  @media (max-width: 750px) {
+    @content;
+  }
+}
 
 @mixin m800 {
   @media (max-width: 800px) {
