@@ -1,6 +1,6 @@
          
 .mainHeader {
-    @include position(absolute, 0, auto, auto, 0);
+    @include position(fixed, 0, auto, auto, 0);
     width: 100%; height: 70px;
     z-index: 100;
     background: #fff;
@@ -81,6 +81,7 @@
     position: fixed;
     right: 10px;
     top: 10px;
+    display: none;
   * {
       transition: .1s ease-in-out;
   }

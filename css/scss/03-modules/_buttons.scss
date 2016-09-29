@@ -9,6 +9,10 @@
     font: 21px $pns;
     cursor: pointer;
     @include transition(all, .2s);
+    &:hover {
+        background-color: $gold;
+        color: #FFF;
+    }
     &--dark {
         background: $text;
         color: #FFF;
