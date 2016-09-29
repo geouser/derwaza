@@ -41,6 +41,8 @@
 		h2 {
 			display: inline-block;
 			text-align: center;
+			margin-bottom: 40px;
+			font-weight: normal;
 
 			.decor-title {
 				display: block;
@@ -55,7 +57,9 @@
 				text-transform: uppercase;
 			}
 
-			margin-bottom: 40px;
+			&:after {
+				display: none;
+			}
 		}
 
 		.group {

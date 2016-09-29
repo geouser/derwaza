@@ -67,6 +67,16 @@ jQuery(document).ready(function($) {
         dots: true
     });
 
+    /*----------------------------
+                              Media slider
+    -------------------------*/
+    $('.media-slider').slick({
+        arrows: true,
+        dots: false
+    });
+
+
+
 
 
     /*----------------------------
