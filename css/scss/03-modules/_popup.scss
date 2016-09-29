@@ -1,6 +1,12 @@
 .popup {
 	display: block;
 	margin: 0 auto;
+	position: relative;
+
+	.mfp-close {
+		top: 10px;
+		right: 10px;
+	}
 
 	&.order-table {
 		width: 780px;
@@ -10,5 +16,231 @@
 
 	.popup-wrapper {
 		border: 1px solid $text;
+		padding: 40px 0;
+	}
+}
+
+
+.order-table {
+	text-align: center;
+
+	h2:after {
+		display: none;
+	}
+
+	.order-form {
+		width: 500px;
+		margin: 0 auto;
+		padding-top: 37px;
+
+		.row {
+			@include flex($justify: space-between);
+			width: 100%;
+		}
+
+		.form-group {
+			width: -webkit-calc(33.33% - 20px);
+			width: calc(33.33% - 20px);
+			margin: 0 10px;
+			position: relative;
+
+			input {
+				width: 100%;
+				padding-left: 35px;
+				height: 35px;
+				border: 1px solid $text;
+			}
+
+			&:before {
+				content: '';
+				width: 35px;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+			}
+
+			&.day:before {
+				background-image: url(../images/calendar.svg);
+				background-size: 15px;
+			}
+			&.time:before {
+				background-image: url(../images/clock.svg);
+				background-size: 15px;
+			}
+			&.persons:before {
+				background-image: url(../images/black-male-user-symbol.svg);
+				background-size: 12px;
+			}
+		}
+
+		.button {
+			margin-top: 50px;
+		}
+	}
+}
+
+
+.ui-datepicker {
+	background-color: #fff;
+	border: 1px solid $text;
+	padding: 5px;
+	display: none;
+}
+.ui-datepicker-header {
+	padding: 10px 20px;
+	position: relative;
+	text-align: center;
+}
+.ui-datepicker-prev,
+.ui-datepicker-next {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 10px;
+	color: transparent;
+	font-size: 0px;
+
+	&:before {
+		content: '';
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+}
+.ui-datepicker-prev {
+	left: 0;
+}
+.ui-datepicker-next {
+	right: 0;
+}
+.ui-datepicker-prev:before {
+	border-style: solid;
+	border-width: 5px 5px 5px 0;
+	border-color: transparent $text transparent transparent;
+}
+
+.ui-datepicker-next:before {
+	border-style: solid;
+	border-width: 5px 0 5px 5px;
+	border-color: transparent transparent transparent $text;
+}
+
+.ui-datepicker-calendar {
+	td {
+		width: 14.28%;
+		text-align: right;
+		background-color: #f6f6f6;
+		color: $text;
+		border: 1px solid #c5c5c5;
+		cursor: pointer;
+
+		&.ui-datepicker-other-month {
+			background-color: transparent;
+			border: 0;
+		}
+
+		&.ui-state-disabled {
+			opacity: .5;
+			cursor: auto;
+		}
+
+		&.ui-datepicker-current-day {
+			background-color: #fffa90;
+			border-color: $gold;
+		}
+
+		a.ui-state-default {
+			color: $text;
+		}
+		a.ui-state-active {
+			color: $gold
+		} 
+	}
+}
+
+
+
+
+.select {
+	position: relative;
+	cursor: pointer;
+
+	&:after {
+		position: absolute;
+		content: '';
+		border-style: solid;
+		border-width: 5px 5px 0px 5px;
+		border-color: $text transparent transparent transparent;
+		right: 17px;
+		top: 50%;
+		-webkit-transform: translate(50%, -50%);
+		-ms-transform: translate(50%, -50%);
+		-o-transform: translate(50%, -50%);
+		transform: translate(50%, -50%);
+		-webkit-transition: border-color 0.3s ease;
+		-o-transition: border-color 0.3s ease;
+		transition: border-color 0.3s ease;
+	}
+
+	input {
+		position: relative;
+		z-index: -1;
+		padding-right: 35px;
+	}
+
+	.dropdown {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		top: 100%;
+		margin-top: -1px;
+		border: 1px solid $text;
+		border-top: 0;
+		display: none;
+		background-color: #fff;
+
+		.dropdown-item {
+			list-style: none;
+			text-align: left;
+			padding-left: 35px;
+			border-color: $gold;
+			cursor: pointer;
+			padding-bottom: 7px;
+			-webkit-transition: color 0.3s ease;
+			-o-transition: color 0.3s ease;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: #000;
+			}
+		}
+	}
+
+	&.active {
+		border-bottom-color: transparent;
+
+		&:after {
+			border-width: 0px 5px 5px 5px;
+			border-color: transparent transparent $gold transparent;
+		}
+
+		input {
+			border-color: $gold!important;
+			border-bottom-color: transparent!important;
+		}
+
+		.dropdown {
+			border: 1px solid $gold;
+			border-top: 0; 
+		}
 	}
 }

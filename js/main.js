@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 
     $('h1:has(span)').addClass('ornamentTop');
 
-    if($( "#accordion").length) {
+    if( $( "#accordion").length > 0 ) {
          $( "#accordion" ).accordion({ heightStyle: "content"  });
     }
     /*---------------------------
@@ -81,8 +81,48 @@ jQuery(document).ready(function($) {
     });
 
 
+     /*----------------------------
+                              Media slider
+    -------------------------*/
+    if ( $('#datepicker').length > 0) {
+        $('#datepicker').datepicker({
+            firstDay: 1,
+            minDate: 0
+        });
+        $("#datepicker").datepicker('setDate', new Date());
+    }
 
 
+     /*----------------------------
+                              Select
+    -------------------------*/
+    $('.select').on('click', function(event) {
+        event.preventDefault();
+
+        var active = $(this).hasClass('active');
+
+        if ( active ) {
+            $(this).removeClass('active');
+            $(this).find('.dropdown').slideUp('fast');   
+        } else {
+            $('.select').removeClass('active');
+            $('.select .dropdown').slideUp('fast');
+            $(this).addClass('active');
+            $(this).find('.dropdown').slideDown('fast'); 
+        }      
+    });
+
+    $('.select input').each(function(index, el) {
+        $(this).val( $(this).siblings('.dropdown').find('.dropdown-item').first().text() );
+    });
+
+    $('.dropdown-item').on('click', function(event) {
+        event.preventDefault();
+        var val = $(this).text();
+        var input = $(this).parent().siblings('input');
+
+        input.val(val);
+    });
 
     /*----------------------------
                               SEND FORM
@@ -182,7 +222,7 @@ jQuery(document).ready(function($) {
     }
 
     if ( $('#map_canvas').length > 0) {
-        googleMap_initialize();   
+        //googleMap_initialize();   
     }
 
 
