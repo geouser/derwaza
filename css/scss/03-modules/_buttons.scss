@@ -8,17 +8,116 @@
     border: none;
     font: 21px $pns;
     cursor: pointer;
+    @include transition(all, .2s);
     &--dark {
         background: $text;
         color: #FFF;
+        &:hover {
+            background-color: $gold;
+        }
     }
     &--yellow {
         background: $gold;
         color: #FFF;
+        &:hover {
+            background-color: $text;
+        }
+    }
+    &--share {
+        background: $text;
+        color: #FFF;
+        width: 150px;
+        position: relative;
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+            width: 25px;
+            height: 25px;
+            background-image: url("../images/share.png");
+            background-repeat: no-repeat;
+        }
     }
 }
 a.button {
     line-height: normal;
     padding: 13px 0 10px;
     display: inline-block;
+}
+
+.share {
+    position: relative;
+    overflow: hidden;
+    .button {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        z-index: 2;
+    }
+    &:hover  .share__links {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.share__links {
+    height: 50px;
+    line-height: 50px;
+    background: $text;
+    padding: 0 16px;
+    margin-left: 20px;
+    display: inline-block;
+    vertical-align: top;
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+    -webkit-transition: opacity .1s;
+         -moz-transition: opacity .1s;
+          -ms-transition: opacity .1s;
+           -o-transition: opacity .1s;
+              transition: opacity .1s;  
+    &:before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 0;
+        height: 0;
+        border-top: 7px solid transparent;
+        border-right: 10px solid $text;
+        border-bottom: 7px solid transparent;
+    }
+    &__item {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 5px;
+        width: 24px;
+        height: 24px;
+        -webkit-transform: scale(.8);
+           -moz-transform: scale(.8);
+            -ms-transform: scale(.8);
+             -o-transform: scale(.8);
+                transform: scale(.8);
+        &--fb {
+            background-position: -100px 0;
+            &:hover {
+                background-position: -213px -1px;
+            }
+        }
+        &--inst {
+            background-position: -139px 0;
+            &:hover {
+                background-position: -251px -1px;
+            }
+        }
+        &--tw {
+            background-position: -181px 0;
+            width: 26px;
+            &:hover {
+                background-position: -290px -1px;
+            }
+        }
+    }
 }

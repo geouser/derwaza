@@ -75,10 +75,14 @@ h2 {
         }
     }
 }
+h3 {
+    text-transform: uppercase;
+    font: 30px $pns;
+}
 .subtitle {
     font: 48px $lti;
 }
-.adviseText {
+.additional {
     text-transform: uppercase;
     margin: 30px;
     a {

@@ -60,7 +60,8 @@
 .social__item,
 .tel:before,
 .down,
-.mainNav li:after {
+.mainNav li:after,
+.share__links__item {
     background-image: url("../images/icons.png");
 }
 .social {
@@ -94,14 +95,49 @@
 
 .down {
     position: absolute;
-    width: 29px;
-    height: 20px;
+    width: 20px;
+    height: 29px;
     left: 0; right: 0;
     bottom: 0;
     margin: auto;
     border: none;
     background-color: transparent;
-    background-position: -64px -4px;
+    background-image: url("../images/arrow-down-white.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: bounceDown 2.5s ease infinite;
+       -moz-animation: bounceDown 2.5s ease infinite;
+         -o-animation: bounceDown 2.5s ease infinite;
+            animation: bounceDown 2.5s ease infinite;
+    background-size: 100% 100%;
+    &:hover {
+        animation: none;
+    }
+}
+
+@keyframes bounceDown {
+    0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+       -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+         -o-transform: translateY(0);
+            transform: translateY(0);
+  }
+    40% {
+    -webkit-transform: translateY(-20px);
+       -moz-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+         -o-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+    60% {
+    -webkit-transform: translateY(-10px);
+       -moz-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+         -o-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
 }
 
 .languages {
