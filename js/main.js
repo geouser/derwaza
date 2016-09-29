@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 
     $('h1:has(span)').addClass('ornamentTop');
 
-    if($( "#accordion" ).lenght) {
+    if($( "#accordion").length) {
          $( "#accordion" ).accordion({ heightStyle: "content"  });
     }
     /*---------------------------
