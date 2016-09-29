@@ -5,6 +5,7 @@ h1 {
     font: 60px $pnb;
     text-transform: uppercase;
     position: relative;
+    display: inline-block;
     span {
         display: block;
         color: $gold;
@@ -13,25 +14,39 @@ h1 {
         bottom: -20px;
         position: relative;
     }
-    &.ornamentTop:after {
-        bottom: auto; top: 56px;
+    &:before {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 59%;
+        height: 76px;
+        position: absolute;
+        bottom: -32px;
+        left: -9%;
+        top: auto;
+        background-repeat: no-repeat;
+        background-position: 0% 0%;
+        background-image: url("../images/title_orn_1.png");
     }
     &:after {
         content: "";
         display: block;
         margin: 0 auto;
-        width: 114%;
+        width: 59%;
         height: 76px;
         position: absolute;
         bottom: -32px;
-        left: -7%;
+        right: -9%;
         top: auto;
         background-repeat: no-repeat;
-        background-position: 50% 50%;
+        background-position: 100% 0%;
         background-image: url("../images/title_orn_1.png");
-        -webkit-background-size: 100% 100%;
-             -o-background-size: 100% 100%;
-                background-size: 100% 100%;
+    }
+    &.ornamentTop:after {
+        bottom: auto; top: 56px;
+    }
+    &.ornamentTop:before {
+        bottom: 32px; top: 56px;
     }
 }
 h2 {

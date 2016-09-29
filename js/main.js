@@ -9,8 +9,9 @@ jQuery(document).ready(function($) {
 
     $('h1:has(span)').addClass('ornamentTop');
 
-
-    $( "#accordion" ).accordion({ heightStyle: "content"  });
+    if($( "#accordion" ).lenght) {
+         $( "#accordion" ).accordion({ heightStyle: "content"  });
+    }
     /*---------------------------
                                   ADD CLASS ON SCROLL
     ---------------------------*/
