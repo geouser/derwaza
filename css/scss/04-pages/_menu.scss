@@ -1,0 +1,6 @@
+.dishList {
+    margin: 40px auto;
+    &__actions {
+        @include flex($justify: space-around);
+    }
+}

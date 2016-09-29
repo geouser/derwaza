@@ -7,6 +7,7 @@ window.params = {
 
 jQuery(document).ready(function($) {
 
+    $('h1:has(span)').addClass('ornamentTop');
     /*---------------------------
                                   ADD CLASS ON SCROLL
     ---------------------------*/
