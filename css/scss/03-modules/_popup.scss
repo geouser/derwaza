@@ -12,6 +12,9 @@
 		width: 780px;
 		padding: 10px;
 		background-color: #fff;
+		@include m800 {
+			width: 95%;
+		}
 	}
 
 	.popup-wrapper {
@@ -32,10 +35,14 @@
 		width: 500px;
 		margin: 0 auto;
 		padding-top: 37px;
-
+		@include m600 {
+			width: 100%;
+		}
 		.row {
 			@include flex($justify: space-between);
 			width: 100%;
+			@include m800 {
+			}
 		}
 
 		.form-group {
@@ -43,6 +50,10 @@
 			width: calc(33.33% - 20px);
 			margin: 0 10px;
 			position: relative;
+			@include m600 {
+				width: 60%;
+				margin: 15px auto;
+			}
 
 			input {
 				width: 100%;
