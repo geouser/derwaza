@@ -13,14 +13,14 @@
 
 @font-face {
 	font-family: 'Lavanderia';
-	src: url('../fonts/subset-Lavanderia-Regular.eot');
-	src: url('../fonts/subset-Lavanderia-Regular.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/subset-Lavanderia-Regular.woff') format('woff'),
-		url('../fonts/subset-Lavanderia-Regular.ttf') format('truetype'),
-		url('../fonts/subset-Lavanderia-Regular.svg#Lavanderia-Regular') format('svg');
-	font-weight: normal;
-	font-style: normal;
+	src: url('../fonts/lavanderia_regular-webfont.eot');
+    src: url('../fonts/lavanderia_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lavanderia_regular-webfont.woff2') format('woff2'),
+         url('../fonts/lavanderia_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
+
 
 @font-face {
 	font-family: 'Proxima Nova Rg';

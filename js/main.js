@@ -8,7 +8,7 @@ window.params = {
 jQuery(document).ready(function($) {
 
     $('h1:has(span)').addClass('ornamentTop');
-
+    $('h1, .subtitle, .offer').addClass('is-visible');
     if( $( "#accordion").length > 0 ) {
          $( "#accordion" ).accordion({ heightStyle: "content"  });
     }
