@@ -144,7 +144,36 @@
             </div>
         </footer>
 
-        <div id="modal-popup" class="mfp-hide zoom-anim-dialog popup"></div>
+        <div id="modal-popup-order" class="mfp-hide zoom-anim-dialog popup order-table">
+            <div class="popup-wrapper">
+                <h2><span>Make a</span>reservation</h2>
+
+                <form action="#" class="order-form">
+                    <div class="row">
+                        <div class="form-group day">
+                            <input type="text" id="datepicker" name="date">
+                        </div>
+                        <div class="form-group time select">
+                            <input type="text" name="time">
+                            <ul class="dropdown">
+                                <li class="dropdown-item">6:00 pm</li>
+                                <li class="dropdown-item">7:00 pm</li>
+                                <li class="dropdown-item">8:00 pm</li>
+                            </ul>
+                        </div>
+                        <div class="form-group persons select">
+                            <input type="text" name="people">
+                            <ul class="dropdown">
+                                <li class="dropdown-item">2 people</li>
+                                <li class="dropdown-item">3 people</li>
+                                <li class="dropdown-item">4 people</li>
+                            </ul>
+                        </div>    
+                    </div>
+                    <button class="button button--dark">Find a table</button>
+                </form>
+            </div>
+        </div>
 
         <div id="modal-popup-ok" class="mfp-hide zoom-anim-dialog popup result">
             <p class="heading">Ваша заявка принята =)</p>
